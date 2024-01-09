@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PlanificacionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,4 +25,8 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+});
+
+Route::controller(PlanificacionController::class)->group(function(){
+    Route::get('planificacion','index')->name('planificacion.index');
 });

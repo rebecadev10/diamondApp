@@ -67,4 +67,5 @@
             </x-authentication-card>
         </div>
     </div>
+    {{-- <x-footer/> --}}
 </x-guest-layout>

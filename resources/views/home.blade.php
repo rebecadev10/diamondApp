@@ -96,5 +96,5 @@
         {{-- </div> --}}
     </div>
     {{-- <div class="flex justify-end"> --}}
-    @extends('footer')
+    @extends('components.footer')
     {{-- </div>  --}}
