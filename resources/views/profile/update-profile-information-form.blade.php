@@ -1,16 +1,11 @@
 <x-form-section submit="updateProfileInformation">
     <x-slot name="title">
-        {{ __('Nombre e imagen') }}
+        {{ __('Profile Information') }}
     </x-slot>
+
     <x-slot name="description">
-        {{ __('Cambiar el nombre de la marca o correo') }}
+        {{ __('Update your account\'s profile information and email address.') }}
     </x-slot>
-  <div class="bg-negro px-8">
-
-    {{-- <x-dropdown>
-
-    </x-dropdown> --}}
-  </div>
 
     <x-slot name="form">
         <!-- Profile Photo -->

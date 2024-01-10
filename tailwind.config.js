@@ -28,7 +28,9 @@ export default {
                 'negro':'#000000',
                 'fondoClaro':'#FCFCF7',
                 'ceramic':'#FEFFFA',
-                'gris':'#777777'
+                'gris':'#777777',
+                'grisClaro':'#E1E1E1',
+                'fondoCrema':'#F0CD7C'
             },
             gridTemplateRows:{
                 'layoutForm':'0.3fr,1fr'
