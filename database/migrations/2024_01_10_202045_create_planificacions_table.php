@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('planificacions', function (Blueprint $table) {
             $table->id();
             $table->string('tipo_red_social');
-            $table->text('descricipcion');
+            $table->text('descripcion');
             $table->date('date_public_facebook');
             $table->time('time_public_facebook');
             $table->date('date_public_instagram');

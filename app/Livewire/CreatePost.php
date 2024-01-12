@@ -2,27 +2,42 @@
 
 namespace App\Livewire;
 
+use App\Livewire\Forms\PostCreateForm;
+use App\Livewire\Forms\PostEditForm;
 use Livewire\Component;
 use App\Models\Planificacion;
+use Livewire\Attributes\Rule;
+use Livewire\WithFileUploads;
 
 class CreatePost extends Component
 {
-    public $tipo_red_social='', $descricipcion,$date_public_facebook,$time_public_facebook,$date_public_instagram,$time_public_instagram;
+    use WithFileUploads;
+    public PostCreateForm $postCreate;
+    public PostEditForm $postEdit;
+    
     public function render()
     {
         return view('livewire.create-post');
     }
     public function save()
     {
-        Planificacion::create([
-            'tipo_red_social' => $this->tipo_red_social,
-            'descricipcion' => $this->descricipcion,
-            'date_public_facebook' => $this->date_public_facebook,
-            'time_public_facebook' => $this->time_public_facebook,
-            'date_public_instagram' => $this->date_public_instagram,
-            'time_public_instagram' => $this->time_public_facebook,
-            
 
-        ]);
+        $this->postCreate->save();
     }
+    public function edit($postId)
+    {
+        $this->resetValidation();
+        $this->postEdit->edit($postId);
+    }
+    public function update()
+    {
+        $this->postEdit->update();
+    }
+    public function destroy($postId)
+    {
+        $post = Planificacion::find($postId);
+        $post->delete();
+
+    }
+  
 }

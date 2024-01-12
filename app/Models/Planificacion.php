@@ -10,6 +10,11 @@ class Planificacion extends Model
     use HasFactory;
 
     protected $fillable = [
-        'tipo_red_social', 'descricipcion','date_public_facebook','date_public_instagram','time_public_facebook','time_public_instagram'
+        'tipo_red_social', 
+        'descripcion',
+        'date_public_facebook',
+        'date_public_instagram',
+        'time_public_facebook',
+        'time_public_instagram'
     ];
 }
