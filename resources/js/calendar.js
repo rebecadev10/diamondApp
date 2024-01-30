@@ -12,7 +12,7 @@ function generateCalendar(year, month) {
     calendarElement.innerHTML = '';
 
     // Set the current month text
-    const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    const monthNames = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'August', 'September', 'October', 'November', 'December'];
     currentMonthElement.innerText = `${monthNames[month]} ${year}`;
     
     // Calculate the day of the week for the first day of the month (0 - Sunday, 1 - Monday, ..., 6 - Saturday)

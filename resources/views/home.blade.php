@@ -20,17 +20,17 @@
     {{-- </div> --}}
     {{-- <div class="flex z-50 bg-azul-transparent"> --}}
     <div class="w-full h-full">
-        <div class="absolute flex h-full">
+        <div class="absolute flex h-screen bg-azul-transparente">
             <div class=" flex flex-col">
 
-                <div class=" flex w-80  h-3/5 items-end  ">
-                    <h2 class="text-left text-3xl text-blanco font-bold px-8">¡IMPULSA TU PRESENCIA EN REDES SOCIALES
+                <div class=" flex w-80  h-4/5 items-end  ">
+                    <h2 class="text-left text-3xl text-blanco font-bold px-8 mt-12">¡IMPULSA TU PRESENCIA EN REDES SOCIALES
                         COMO
                         NUNCA ANTES!</h2>
 
                 </div>
-                <div class=" w-3/4 h-2/5">
-                    <p class=" text-left text-blanco pl-8 pt-2">Descubre el poder de las metricas precisas y optimiza
+                <div class=" w-3/4 h-1/5">
+                    <p class=" text-left text-blanco pl-8 pt-2 mt-4">Descubre el poder de las metricas precisas y optimiza
                         tus
                         publicaciones
                         con nuestra plataforma lider. ¡Aumenta tu impacto digital ahora!</p>
