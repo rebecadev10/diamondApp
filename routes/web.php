@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AnaliticaController;
 use App\Http\Controllers\AnunciosController;
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MensajeriaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PlanificacionController;
@@ -41,3 +42,10 @@ Route::controller(AnunciosController::class)->group(function(){
 Route::controller(MensajeriaController::class)->group(function(){
     Route::get('mensajeria','index')->name('mensajeria');
 });
+
+Route::get('/auth/redirect', [AuthController::class, 'redirect'])
+    ->name('auth.redirect');
+    
+    Route::get('/auth/callback', [AuthController::class, 'callback'])
+    ->name('auth.callback');
+ 

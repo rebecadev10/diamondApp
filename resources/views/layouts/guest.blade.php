@@ -20,15 +20,15 @@
 </head>
 
 <body>
-    <div class="flex flex-col">
-        <div class="h-4/5">
+    <div class="flex flex-col h-screen">
+        <div class="h-4/5 ">
             <div class="font-sans text-blanco antialiased">
                 {{ $slot }}
             </div>
         </div>
-        <div class="h-1/5">
+        {{-- <div class="h-1/5">
             <x-footer/>
-        </div>
+        </div> --}}
     </div>
 
     @livewireScripts
