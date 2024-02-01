@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class UserFacebook extends Model
 {
     use HasFactory;
-
+    protected $table = 'users_facebook';
     protected $fillable = [
         'name', 'email', 'facebook_id','tokenFacebook',
     ];
