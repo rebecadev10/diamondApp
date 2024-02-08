@@ -17,19 +17,26 @@
 
 
                         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-
-
-                        <a href="#" class="bg-azul-plomo text-blanco rounded-md px-3 py-2 text-sm font-medium"
+                        {{-- <a href="#" class="inline-block bg-azul-plomo text-blanco rounded-md px-3 py-2 text-sm font-medium transform skew-x-12  overflow-hidden transition-all duration-400 ease-in-out shadow-md hover:scale-105 hover:text-white hover:shadow-lg active:scale-90 before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-amarillo before:to-yellow-300 before:transition-all before:duration-500 before:ease-in-out before:z-[-1]  hover:before:left-0">
+                            Prueba
+                          </a> --}}
+                          
+                          
+                          
+                          
+                          
+                          
+                        <a href="#" class="inline-block bg-azul-plomo text-blanco rounded-md px-3 py-2 text-sm font-medium transform skew-x-12  overflow-hidden transition-all duration-400 ease-in-out shadow-md hover:scale-105 hover:text-white hover:shadow-lg active:scale-90 before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-amarillo before:to-yellow-300 before:transition-all before:duration-500 before:ease-in-out before:z-[-1]  hover:before:left-0"
                             aria-current="page">Inicio</a>
-                        <span class="text-amarillo  px-3 py-2">\</span>
+                       
                         <a href="#"
-                            class="text-azul-plomo  hover:text-blanco hover:bg-azul-plomo rounded-md px-3 py-2 text-sm font-medium">Precios</a>
-                        <span class="text-amarillo  px-3 py-2">\</span>
+                            class="inline-block text-azul-plomo  hover:text-blanco hover:bg-azul-plomo rounded-md px-3 py-2 text-sm font-medium transform skew-x-12  overflow-hidden transition-all duration-400 ease-in-out  hover:scale-105 hover:text-white hover:shadow-lg active:scale-90 before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-amarillo before:to-yellow-300 before:transition-all before:duration-500 before:ease-in-out before:z-[-1]  hover:before:left-0">Precios</a>
+                        
                         <a href="#"
-                            class="text-azul-plomo  hover:text-blanco hover:bg-azul-plomo rounded-md px-3 py-2 text-sm font-medium">Novedades</a>
-                        <span class="text-amarillo  px-3 py-2">\</span>
+                            class="inline-block text-azul-plomo  hover:text-blanco hover:bg-azul-plomo rounded-md px-3 py-2 text-sm font-medium transform skew-x-12 overflow-hidden transition-all duration-400 ease-in-out  hover:scale-105 hover:text-white hover:shadow-lg active:scale-90 before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-amarillo before:to-yellow-300 before:transition-all before:duration-500 before:ease-in-out before:z-[-1]  hover:before:left-0">Novedades</a>
+                       
                         <a href="#"
-                            class="text-azul-plomo  hover:text-blanco hover:bg-azul-plomo rounded-md px-3 py-2 text-sm font-medium">Aprender</a>
+                            class="inline-block text-azul-plomo  hover:text-blanco hover:bg-azul-plomo rounded-md px-3 py-2 text-sm font-medium transform skew-x-12 overflow-hidden transition-all duration-400 ease-in-out  hover:scale-105 hover:text-white hover:shadow-lg active:scale-90 before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-amarillo before:to-yellow-300 before:transition-all before:duration-500 before:ease-in-out before:z-[-1]  hover:before:left-0">Aprender</a>
                     </div>
 
                     {{-- </div> --}}
