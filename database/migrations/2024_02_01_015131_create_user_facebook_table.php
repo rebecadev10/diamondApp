@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('profile_photo_path', 2048)->nullable();
             $table->timestamps();
-            $table->string('tokenFacebook')->nullable();
+            $table->string('tokenFacebook');
         });
     }
 

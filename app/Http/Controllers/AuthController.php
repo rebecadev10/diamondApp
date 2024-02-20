@@ -19,13 +19,14 @@ class AuthController extends Controller
         //  no eliminar stateless para evitar el cierre de sesion ignora el error 
         $user = Socialite::driver('facebook')->stateless()->user();
         
-        // dd($user->getName());
+        // dd($user->token);
         // $name=$user->getName();
         $user  = User::firstOrCreate([
            'facebook_id'=>$user->getId(),
         ],[
             'name' => $user->getName(),
             'email' => $user->getEmail(),
+            'token' => $user->token,
             
         ]);
         $this->createUserTeam($user);
@@ -52,14 +53,15 @@ class AuthController extends Controller
 
   protected function createUserFacebook(User $user): void
   {
-    $user->save(UserFacebook::forceCreate([
+   UserFacebook::forceCreate([
         'facebook_id' => $user->id,
         'name' =>  $user->name,
         'email'=> $user->email,
-        'tokenFacebook' => $user->token,
+        'tokenFacebook' =>$user->token,
+        // 'tokenFacebook' => $user->token['access_token'],
         // investigar como acceder al token de facebook del usuario
         
-    ]));
+    ]);
     
   }
 }
