@@ -1,0 +1,71 @@
+Hola Adri ;) ya vi lo que me pasaste. Estas colocando una SDK modificada por eso no funciona, ademas es obsoleta las SDK quedan obsoletas si
+usuario actualiza una version
+
+Aqui tienes los logs
+
+Usa el composer facebook/graph-sdk
+
+recuerda siempre usar la ultima version cuando coloques las credenciales en tu archivo
+FACEBOOK_DEFAULT_GRAPH_VERSION=v12.0
+
+creas una instancia y le agregas eso, ademas tienes que tener el modelo ya hecho porque si no no puedes usar la sdk es obligatorio
+
+Route::get('auth/facebook', 'FacebookAuthController@redirectToFacebook');
+Route::get('auth/facebook/callback', 'FacebookAuthController@handleFacebookCallback');
+
+Creas tu FacebookAuthController
+
+y ahi le agregas 
+
+use Facebook\Facebook;
+use Illuminate\Support\Facades\Session;
+
+class FacebookAuthController extends Controller
+{
+    public function redirectToFacebook()
+    {
+        
+    }
+
+    public function handleFacebookCallback()
+    {
+       
+    }
+}
+
+Si quieres el accessToke
+use Illuminate\Support\Facades\Session;
+
+$accessToken = $fb->getRedirectLoginHelper()->getAccessToken();
+
+Session::put('fb_access_token', $accessToken);
+
+Y si quieres que no se cierre la sesion
+
+$accessToken = Session::get('fb_access_token');
+
+if($accessToken) {
+   
+    try {
+        $response = $fb->get('/me', $accessToken);
+        $user = $response->getGraphUser();
+        
+        // Acceder a los datos del usuario
+        $name = $user->getName();
+        $email = $user->getEmail();
+        
+       
+    } catch(Facebook\Exceptions\FacebookResponseException $e) {
+        
+    } catch(Facebook\Exceptions\FacebookSDKException $e) {
+        
+    }
+} else {
+   
+}
+
+ 
+
+
+
+
