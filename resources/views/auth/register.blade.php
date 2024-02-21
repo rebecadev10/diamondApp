@@ -77,7 +77,9 @@
                                 <x-input id="password_confirmation" class="block mt-1 w-full" type="password"
                                     name="password_confirmation" required autocomplete="new-password" />
                             </div>
-
+                            <div class="mt-4">
+                                <a href="{{ route('facebook.login')}}" class="bg-azul-normal text-blanco px-4 py-2">Iniciar Sesion Facebook</a>
+                            </div>
                             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                                 <div class="mt-4">
                                     <x-label for="terms">
