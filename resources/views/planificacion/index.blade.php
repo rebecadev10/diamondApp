@@ -34,24 +34,30 @@
             <div class="bg-blanco w-full overflow-hidden shadow-xl sm:rounded-lg py-2 ">
                 <div class="flex flex-row justify-between px-4 mt-2">
                     <button
-                        class="bg-amarillo px-2 text-blanco text-xs fill-blanco inline-flex  rounded-lg items-center">Crear
+                        class="bg-amarillo px-2 text-blanco text-xs    rounded-lg "> <a  href="{{route('planificacion.publicar')}}" class="inline-flex fill-blanco items-center">Crear
                         Publicación <svg xmlns="http://www.w3.org/2000/svg" height="12" width="12" class="mx-1"
                             viewBox="0 0 512 512">
                             <path
                                 d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM232 344V280H168c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V168c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H280v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z" />
-                        </svg></button>
-                    <h4 class="justify-start px-4 py-2 text-md ">Calendario</h4>
+                        </svg> </a></button>
+                    <h4 class="justify-start px-4  text-md ">Calendario</h4>
 
                 </div>
                 <!-- component -->
-                <div class="flex items-center justify-center h-screen">
+                <div class="flex items-start justify-center h-screen py-4">
 
-                    <div class="lg:w-7/12 md:w-9/12 sm:w-10/12 mx-auto p-4">
+                    <div class="lg:w-11/12 md:w-10/12 sm:w-9/12 mx-auto ">
                         <div class="bg-white shadow-lg rounded-lg overflow-hidden">
                             <div class="flex items-center justify-between px-6 py-3 bg-gray-700">
-                                <button id="prevMonth" class="text-white">Previous</button>
+                                <button id="prevMonth" class="text-white">
+                                    <svg xmlns="http://www.w3.org/2000/svg"  height="16" width="14" class="fill-blanco" viewBox="0 0 448 512">
+                                        <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
+                                    </button>
                                 <h2 id="currentMonth" class="text-white"></h2>
-                                <button id="nextMonth" class="text-white">Next</button>
+                                <button id="nextMonth" class="text-white">
+
+                                    <svg xmlns="http://www.w3.org/2000/svg"  height="16" width="14" class="fill-blanco" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+                                </button>
                             </div>
                             <div class="grid grid-cols-7 gap-2 p-4" id="calendar">
                                 <!-- Calendar Days Go Here -->
@@ -64,7 +70,7 @@
                                     class="modal-container bg-white w-11/12 md:max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
                                     <div class="modal-content py-4 text-left px-6">
                                         <div class="flex justify-between items-center pb-3">
-                                            <p class="text-2xl font-bold">Selected Date</p>
+                                            <p class="text-2xl font-bold">Seleciona la fecha</p>
                                             <button id="closeModal"
                                                 class="modal-close px-3 py-1 rounded-full bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring">✕</button>
                                         </div>
