@@ -6,6 +6,7 @@
     "license": "MIT",
     "require": {
         "php": "^8.1",
+        "facebook/graph-sdk": "^5.1",
         "guzzlehttp/guzzle": "^7.2",
         "joelbutcher/facebook-graph-sdk": "^6.0.2",
         "joelbutcher/laravel-facebook-graph": "^1.2",

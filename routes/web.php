@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MensajeriaController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PlanificacionController;
+use App\Http\Controllers\FacebookAuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,23 +51,23 @@ Route::controller(MensajeriaController::class)->group(function(){
 //     ->name('auth.callback');
 
 
-use JoelButcher\Facebook\Facades\Facebook as FacebookFacade;
+// use JoelButcher\Facebook\Facades\Facebook as FacebookFacade;
 
 // ...
 // 
-Route::get('facebook/login', function () {
+// Route::get('facebook/login', function () {
     // set the permissions (scopes)
     // by default the email and public_profile permission are added
     // in the HandlesAuthentication trait
 
-    $scopes = ['pages_manage_posts', 'pages_read_engagement', 'pages_show_list'];
+    // $scopes = ['pages_manage_posts', 'pages_read_engagement', 'pages_show_list'];
     
-    $loginUrl = FacebookFacade::getRedirect(route('auth.callback'), $scopes);
+    // $loginUrl = FacebookFacade::getRedirect(route('auth.callback'), $scopes);
     
     // echo '<a href="' . $loginUrl . '">Log in with Facebook!</a>';
-    return redirect($loginUrl);
+    // return redirect($loginUrl);
     // echo $loginUrl;
-})->name('facebook.login');
+// })->name('facebook.login');
 // Route::get('facebook/login', function () {
 //     // set the permissions (scopes)
 //     // by default the email and public_profile permission are added
@@ -78,24 +79,25 @@ Route::get('facebook/login', function () {
     
 //     echo '<a href="' . $loginUrl . '">Log in with Facebook!</a>';
 // });
+Route::get('/auth/facebook', [FacebookAuthController::class, 'redirectToFacebook'])->name('facebook.redirect');
+Route::get('/auth/facebook/callback', [FacebookAuthController::class, 'callback'])->name('facebook.callback');
+// use JoelButcher\Facebook\Facebook;
 
-use JoelButcher\Facebook\Facebook;
 
 
-
-Route::get('auth/callback', function () {
-    // this is how to get the token
-    // make sur to save the token in the database
-    // because you can't use this methods again unless 
-    // you repeat the long proccess
+// Route::get('auth/callback', function () {
+//     // this is how to get the token
+//     // make sur to save the token in the database
+//     // because you can't use this methods again unless 
+//     // you repeat the long proccess
     
-    $token = FacebookFacade::getToken();
+//     $token = FacebookFacade::getToken();
 
 
-    // this is how to use the token
+//     // this is how to use the token
     
-    $fb = app(Facebook::class);
-    $fb->getFacebook()->setDefaultAccessToken($token);
+//     $fb = app(Facebook::class);
+//     $fb->getFacebook()->setDefaultAccessToken($token);
 
-    return $fb->getUser();
-})->name('auth.callback');
+//     return $fb->getUser();
+// })->name('auth.callback');

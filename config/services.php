@@ -30,5 +30,11 @@ return [
         'secret' => env('AWS_SECRET_ACCESS_KEY'),
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
+    'facebook'=> [
+        'app_id' => env('FACEBOOK_APP_ID'),
+        'app_secret' => env('FACEBOOK_APP_SECRET'),
+        'redirect_uri' => env('FACEBOOK_REDIRECT_URI'),
+        'beta_mode' => env('FACEBOOK_ENABLE_BETA', true),
+    ],
 
 ];
