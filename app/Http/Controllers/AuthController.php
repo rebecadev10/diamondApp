@@ -12,32 +12,34 @@ use Laravel\Socialite\Facades\Socialite;
 class AuthController extends Controller
 {
     public function redirect(){
-        return Socialite::driver('facebook')->redirect();
+  return Socialite::driver('facebook')->scopes(['email'])->redirect();
     }
     public function callback()
     {
         //  no eliminar stateless para evitar el cierre de sesion ignora el error 
         $user = Socialite::driver('facebook')->stateless()->user();
         
+        //imprimir informaion que trae facebook del usuario
         // dd($user->token);
-        // $name=$user->getName();
+
+        $token = $user->token; // Acceder correctamente al token del usuario
+
+
+
+
         $user  = User::firstOrCreate([
            'facebook_id'=>$user->getId(),
         ],[
             'name' => $user->getName(),
             'email' => $user->getEmail(),
-            'token' => $user->token,
+            'token' => $token,
             
         ]);
         $this->createUserTeam($user);
         $this->createUserFacebook($user);
-        // Team::forceCreate([
-        //     'user_id' => $user->id,
-        //     'name' => explode(' ', $name, 2)[0]."'s Team",
-        //     'personal_team' => true,
-        // ]);
+     
         
-        // dd($user);
+        dd($user);
         auth()->login($user);
         return redirect()->to('/dashboard');
     }
@@ -58,7 +60,6 @@ class AuthController extends Controller
         'name' =>  $user->name,
         'email'=> $user->email,
         'tokenFacebook' =>$user->token,
-        // 'tokenFacebook' => $user->token['access_token'],
         // investigar como acceder al token de facebook del usuario
         
     ]);
