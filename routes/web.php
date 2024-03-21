@@ -4,6 +4,7 @@ use App\Http\Controllers\AnaliticaController;
 use App\Http\Controllers\AnunciosController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MensajeriaController;
+use App\Http\Controllers\MetricasController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PlanificacionController;
 
@@ -23,7 +24,8 @@ Route::get('/', function () {
 });
 
 Route::middleware([ 'auth:sanctum',    config('jetstream.auth_session'),    'verified',])->group(function () {
-        Route::get('/dashboard', function () { return view('dashboard'); })->name('dashboard');
+      Route::get('/dashboard', [MetricasController::class, 'chartGraph'])->name('dashboard');
+        // Route::get('/dashboard', function () { return view('dashboard'); })->name('dashboard');
 });
 
 Route::controller(PlanificacionController::class)->group(function(){
@@ -31,6 +33,8 @@ Route::controller(PlanificacionController::class)->group(function(){
     Route::get('planificacion/publicar','publicar')->name('planificacion.publicar');
      //btn redirige a la vista crear publicacion
 });
+
+// Route::get('/dashboard', [MetricasController::class, 'chartGraph'])->name('charts');
 
 Route::controller(AnaliticaController::class)->group(function(){
     Route::get('analitica','index')->name('analitica');
