@@ -11,7 +11,7 @@
                         wire:model.live="postCreate.tipo_red_social"
                         >
                         <option value="" disabled>Seleccione una categoria</option>
-                        <option value="Facebook_e_Instagran">Facebook e Instagran</option>
+                        <option value="Facebook_e_Instagram">Facebook e Instagram</option>
                         <option value="tiktok">Tiktok</option>
                     </x-select>
                     <x-input-error for="postCreate.tipo_red_social"/>
@@ -93,9 +93,42 @@
         </div>
     </form>
 </div>
-<div class="w-1/2">
-@if($postCreate->image)
-<img src="{{$postCreate->image->temporaryUrl()}}" alt="">
-@endif
+<div class="w-1/2 mx-4 my-4 p-2">
+
+
+
+<div class="w-4/5 bg-blanco h-screen w-full rounded-lg shadow-xl">
+    <div class="px-2 py-4 mx-2 my-4 items-center flex-row flex">
+   
+    @if (Laravel\Jetstream\Jetstream::managesProfilePhotos())
+                                <img class="h-8 w-8 rounded-full object-cover" src="{{ Auth::user()->profile_photo_url }}"
+                                    alt="{{ Auth::user()->name }}" />
+                                     <p class="flex text-gray-700">  {{ Auth::user()->name }}</p> 
+                            @else
+                                  <p class="flex text-gray-700 text-center">  {{ Auth::user()->name }}</p> 
+                                @endif
+                                </div>
+@if($postCreate->tipo_red_social ==='Facebook_e_Instagram')
+
+    @if($postCreate->descripcion)
+    <p class="text-md text-left p-4">{{$postCreate->descripcion}}</p>
+    @endif
+              @if($postCreate->image)
+            <div class="relative w-72 p-4 rounded-lg">
+                <img src="{{$postCreate->image->temporaryUrl()}}" alt="">
+                <div class="absolute top-0 left-0 bg-white p-2 z-10">
+                 
+                    
+                    
+                </div>
+            </div>
+            @endif
+    </div>
+    @else
+    <div> 
+
+    </div >
+    @endif    
+
 </div>
 </div>

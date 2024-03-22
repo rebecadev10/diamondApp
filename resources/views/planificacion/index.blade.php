@@ -2,9 +2,9 @@
     <div class="flex">
         <div class="w-1/5 bg-ceramic">
             <div
-                class="flex   px-2 h-full bg-azul text-azul-plomo fill-azul-plomo text-sm items-start justify-center py-2">
+                class="flex   px-2 h-full bg-azul text-azul-plomo text-lg fill-azul-plomo text-sm items-start justify-center py-2 mx-4">
                 <ul class=" flex flex-col  w-full ">
-                    <li class="inline-flex w-full py-2 items-center justify-between">
+                    <li class="inline-flex w-full py-2 items-center justify-around">
                         <div>
                             <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512">
                                 <path
@@ -15,7 +15,7 @@
                         <div>
                         </div>
                     </li>
-                    <li class="inline-flex w-full py-2 items-center justify-between">
+                    <li class="inline-flex w-full py-2 items-center justify-around">
                         <div>
                             <svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512">
                                 <path
@@ -32,23 +32,24 @@
 
         <div class="w-4/5">
             <div class="bg-blanco w-full overflow-hidden shadow-xl sm:rounded-lg py-2 ">
-                <div class="flex flex-row justify-between px-4 mt-2">
-                    <button
-                        class="bg-amarillo px-2 text-blanco text-xs    rounded-lg "> <a  href="{{route('planificacion.publicar')}}" class="inline-flex fill-blanco items-center">Crear
-                        Publicación <svg xmlns="http://www.w3.org/2000/svg" height="12" width="12" class="mx-1"
-                            viewBox="0 0 512 512">
-                            <path
-                                d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM232 344V280H168c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V168c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H280v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z" />
-                        </svg> </a></button>
-                    <h4 class="justify-start px-4  text-md ">Calendario</h4>
-
+                <div class="flex  justify-between px-4 mt-2">
+                    <button class="w-48 bg-amarillo text-blanco hover:text-amarillo hover:bg-blanco rounded-md hover:border-2 hover:border-amarillo px-3 py-2 text-sm fill-blanco font-medium transform skew-x-12 overflow-hidden transition-all duration-400 ease-in-out hover:scale-105 hover:text-white hover:shadow-lg active:scale-90 before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-amarillo before:to-yellow-300 before:transition-all before:duration-500 before:ease-in-out before:z-[-1] hover:before:left-0">
+                        <a href="{{route('planificacion.publicar')}}" class="inline-flex items-center">
+                            Crear Publicación <span class="ml-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="12" width="12" viewBox="0 0 512 512">
+                                    <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM232 344V280H168c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V168c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H280v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z" />
+                                </svg>
+                            </span>
+                        </a>
+                    </button>
                 </div>
+
                 <!-- component -->
                 <div class="flex items-start justify-center h-screen py-4">
 
                     <div class="lg:w-11/12 md:w-10/12 sm:w-9/12 mx-auto ">
                         <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                            <div class="flex items-center justify-between px-6 py-3 bg-gray-700">
+                            <div class="flex items-center justify-between px-6 py-4 bg-gray-700">
                                 <button id="prevMonth" class="text-white">
                                     <svg xmlns="http://www.w3.org/2000/svg"  height="16" width="14" class="fill-blanco" viewBox="0 0 448 512">
                                         <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
@@ -56,7 +57,7 @@
                                 <h2 id="currentMonth" class="text-white"></h2>
                                 <button id="nextMonth" class="text-white">
 
-                                    <svg xmlns="http://www.w3.org/2000/svg"  height="16" width="14" class="fill-blanco" viewBox="0 0 448 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg"  height="16" width="14" class="fill-blanco" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
                                 </button>
                             </div>
                             <div class="grid grid-cols-7 gap-2 p-4" id="calendar">
