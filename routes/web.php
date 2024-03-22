@@ -35,9 +35,9 @@ Route::controller(PlanificacionController::class)->group(function(){
 });
 
 // Route::get('/dashboard', [MetricasController::class, 'chartGraph'])->name('charts');
-
+    Route::get('/analitica', [MetricasController::class, 'chartAnalitic'])->name('analitica');
 Route::controller(AnaliticaController::class)->group(function(){
-    Route::get('analitica','index')->name('analitica');
+    // Route::get('analitica','index')->name('analitica');
     
 });
 Route::controller(AnunciosController::class)->group(function(){
@@ -53,3 +53,8 @@ Route::get('/auth/redirect', [AuthController::class, 'redirect'])
     Route::get('/auth/callback', [AuthController::class, 'callback'])
     ->name('auth.callback');
  
+ // TERMINAR DE CONFIGURAR LAS RUTAS
+
+Route::get('auth/instagram', 'InstagramController@redirectToInstagram');
+Route::get('auth/instagram/callback', 'InstagramController@handleInstagramCallback');
+Route::get('instagram-login', 'InstagramController@login')->name('instagram.login');

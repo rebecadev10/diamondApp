@@ -22,7 +22,7 @@ class AuthController extends Controller
         //imprimir informaion que trae facebook del usuario
         // dd($user->token);
 
-        $token = $user->token; // Acceder correctamente al token del usuario
+        // $token = $user->token; // Acceder correctamente al token del usuario
 
 
 
@@ -32,14 +32,14 @@ class AuthController extends Controller
         ],[
             'name' => $user->getName(),
             'email' => $user->getEmail(),
-            'token' => $token,
+            // 'token' => $token,
             
         ]);
         $this->createUserTeam($user);
         $this->createUserFacebook($user);
      
         
-        dd($user);
+        // dd($user);
         auth()->login($user);
         return redirect()->to('/dashboard');
     }
@@ -59,7 +59,7 @@ class AuthController extends Controller
         'facebook_id' => $user->id,
         'name' =>  $user->name,
         'email'=> $user->email,
-        'tokenFacebook' =>$user->token,
+        
         // investigar como acceder al token de facebook del usuario
         
     ]);

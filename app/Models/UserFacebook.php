@@ -12,9 +12,7 @@ class UserFacebook extends Model
     protected $fillable = [
         'name', 'email', 'facebook_id', 
     ];
-    protected $hidden = [
-        'tokenFacebook',
-    ];
+    
     protected $appends = [
         'profile_photo_url',
     ];
