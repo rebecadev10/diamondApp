@@ -7,7 +7,9 @@ use Livewire\Attributes\Rule;
 use Livewire\Attributes\Validate;
 use Livewire\Form;
 use Livewire\WithFileUploads;
-
+use Illuminate\Http\Request
+use Laravel\Socialite\Facades\Socialite;
+use Illuminate\Support\Facades\Auth;
 class PostCreateForm extends Form
 {
     use WithFileUploads;
@@ -28,6 +30,8 @@ class PostCreateForm extends Form
        public $image;
        public $imageKey;
 
+       // public $acces_token='EAANoPYPks1gBO0WM13Rbj8TFDZAwpmsgjx9MR7vuwpr8yq4d3R6hp3NgZBtvZBfnr5g6LPirIEmYsOuY2HMCIbFcZASKO5ZCOWC1Izbj2BTQNYz2ZCmWnFPgMqBJfYe7qbj9lL6HuEsC2NPq7pNsZC3X7lZClvYUei18RjZAmZB81AIhforDkVXO59pGuW43W6m8cc';
+
        public function save()
        {
     
@@ -44,6 +48,10 @@ class PostCreateForm extends Form
 
            $this->reset();
            $this->imageKey=rand();
+
+            // Redirigir a otra página después de guardar
+        return redirect()->to('/planificacion/index');
+
        }
          public function rules()// definimos la validacion de cada propiedad del formulario
     {
