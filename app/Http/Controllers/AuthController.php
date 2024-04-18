@@ -32,6 +32,7 @@ class AuthController extends Controller
         ],[
             'name' => $user->getName(),
             'email' => $user->getEmail(),
+            'accessToken' => $user->getAccessToken(),
             // 'token' => $token,
             
         ]);

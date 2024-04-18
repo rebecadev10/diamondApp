@@ -1,4 +1,5 @@
 <x-app-layout>
+    @vite('resources/js/calendar.js')
     <div class="flex">
         <div class="w-1/5 bg-ceramic">
             <div

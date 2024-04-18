@@ -50,8 +50,8 @@ Route::controller(MensajeriaController::class)->group(function(){
 Route::get('/auth/redirect', [AuthController::class, 'redirect'])
     ->name('auth.redirect');
     
-    Route::get('/auth/callback', [AuthController::class, 'callback'])
-    ->name('auth.callback');
+//     Route::get('/auth/callback', [AuthController::class, 'callback'])
+//     ->name('auth.callback');
  
  // TERMINAR DE CONFIGURAR LAS RUTAS
 

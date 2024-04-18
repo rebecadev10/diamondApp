@@ -78,7 +78,8 @@
                                     name="password_confirmation" required autocomplete="new-password" />
                             </div>
                             <div class="mt-4">
-                                <a href="{{ route('auth.redirect')}}" class="bg-azul-normal text-blanco px-4 py-2">Iniciar Sesion Facebook</a>
+                                {{-- {{ route('auth.redirect')}} --}}
+                                <a href="" class="bg-azul-normal text-blanco px-4 py-2" id="btnRegister">Iniciar Sesion Facebook</a>
                             </div>
                             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                                 <div class="mt-4">
@@ -136,5 +137,7 @@
             @extends('components.footer')
         </div> --}}
     </div>
-    
+    {{-- <script src="{{ asset('js/app.js') }}"></script> --}}
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+
 </x-guest-layout>

@@ -7,9 +7,9 @@ use Livewire\Attributes\Rule;
 use Livewire\Attributes\Validate;
 use Livewire\Form;
 use Livewire\WithFileUploads;
-use Illuminate\Http\Request
-use Laravel\Socialite\Facades\Socialite;
-use Illuminate\Support\Facades\Auth;
+// use Illuminate\Http\Request
+// use Laravel\Socialite\Facades\Socialite;
+// use Illuminate\Support\Facades\Auth;
 class PostCreateForm extends Form
 {
     use WithFileUploads;
