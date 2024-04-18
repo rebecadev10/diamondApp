@@ -80,6 +80,9 @@
                             <div class="mt-4">
                                 <a href="{{ route('auth.redirect')}}" class="bg-azul-normal text-blanco px-4 py-2">Iniciar Sesion Facebook</a>
                             </div>
+                              <div class="mt-4">
+                                <a href="{{ route('google.redirect')}}" class="bg-gray-700 text-blanco px-4 py-2">Iniciar Sesion google</a>
+                            </div>
                             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
                                 <div class="mt-4">
                                     <x-label for="terms">

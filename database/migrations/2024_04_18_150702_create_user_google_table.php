@@ -11,19 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('user_google', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('google_id')->nullable();
             $table->string('name');
             $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password')->nullable();
-            $table->rememberToken();
-            $table->foreignId('current_team_id')->nullable();
-            $table->string('facebook_id')->nullable();
-            $table->string('google_id')->nullable();
-            $table->string('profile_photo_path', 2048)->nullable();
+            $table->string('google_token')->nullable();
+            $table->string('google_refresh_token')->nullable();
+            $table->string('google_profile_photo_path', 2048)->nullable();
             $table->timestamps();
-            
         });
     }
 
@@ -32,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('user_google');
     }
 };
