@@ -4,6 +4,7 @@ use App\Http\Controllers\AnaliticaController;
 use App\Http\Controllers\AnunciosController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\TwitterController;
 use App\Http\Controllers\MensajeriaController;
 use App\Http\Controllers\MetricasController;
 use Illuminate\Support\Facades\Route;
@@ -49,17 +50,20 @@ Route::controller(MensajeriaController::class)->group(function(){
 });
 
 // CONTROLADOR FACEBOOK SOCIALITE
-// Route::get('/auth/redirect', [AuthController::class, 'redirect'])
-//     ->name('auth.redirect');
-// Route::get('/auth/callback', [AuthController::class, 'callback'])
-//     ->name('auth.callback');
+Route::get('/auth/redirect', [AuthController::class, 'redirect'])
+    ->name('auth.redirect');
+Route::get('/auth/callback', [AuthController::class, 'callback'])
+    ->name('auth.callback');
 //  CONTROLADOR GOOGLE
 
     Route::get('/google/redirect', [GoogleController::class, 'redirect'])->name('google.redirect');
     Route::get('/google/callback', [GoogleController::class, 'callback'])->name('google.callback');
 
+    Route::get('/twitter/redirect', [TwitterController::class, 'redirect'])->name('twitter.redirect');
+    Route::get('/twitter/callback', [TwitterController::class, 'callback'])->name('twitter.callback');
+
  // TERMINAR DE CONFIGURAR LAS RUTAS
 
-Route::get('auth/instagram', 'InstagramController@redirectToInstagram');
-Route::get('auth/instagram/callback', 'InstagramController@handleInstagramCallback');
-Route::get('instagram-login', 'InstagramController@login')->name('instagram.login');
+// Route::get('auth/instagram', 'InstagramController@redirectToInstagram');
+// Route::get('auth/instagram/callback', 'InstagramController@handleInstagramCallback');
+// Route::get('instagram-login', 'InstagramController@login')->name('instagram.login');

@@ -23,6 +23,14 @@ export default {
                     'plomo':'#213242',
                     'transparente':'44b5ed89',
                 },
+                social:{
+                    'facebook':'#1877f2',
+                    'twitter': '#55acee',
+                    'instagram':'#e4405f',
+                    'whatsapp':'#25d366',
+                    
+
+                },
                 'amarillo':'#E0AA2E',
                 'blanco':'#ffffff',
                 'negro':'#000000',

@@ -32,7 +32,7 @@ class AuthController extends Controller
         ],[
             'name' => $user->getName(),
             'email' => $user->getEmail(),
-            // 'token' => $token,
+            // 'token' => $token,  //sin permisologia para acceder al token del usuario
             
         ]);
         $this->createUserTeam($user);
