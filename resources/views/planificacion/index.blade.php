@@ -33,7 +33,7 @@
         <div class="w-4/5">
             <div class="bg-blanco w-full overflow-hidden shadow-xl sm:rounded-lg py-2 ">
                 <div class="flex  justify-between px-4 mt-2">
-                    <button class="w-48 bg-amarillo text-blanco hover:text-amarillo hover:bg-blanco rounded-md hover:border-2 hover:border-amarillo px-3 py-2 text-sm fill-blanco font-medium transform skew-x-12 overflow-hidden transition-all duration-400 ease-in-out hover:scale-105 hover:text-white hover:shadow-lg active:scale-90 before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-amarillo before:to-yellow-300 before:transition-all before:duration-500 before:ease-in-out before:z-[-1] hover:before:left-0">
+                    <button class="w-48 bg-amarillo text-blanco hover:text-amarillo hover:bg-blanco rounded-md hover:border-2 hover:border-amarillo px-3 py-2 text-sm fill-white font-medium transform skew-x-12 overflow-hidden transition-all duration-400 ease-in-out hover:scale-105 hover:text-white hover:shadow-lg active:scale-90 before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-amarillo before:to-yellow-300 before:transition-all before:duration-500 before:ease-in-out before:z-[-1] hover:before:left-0">
                         <a href="{{route('planificacion.publicar')}}" class="inline-flex items-center">
                             Crear Publicación <span class="ml-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" height="12" width="12" viewBox="0 0 512 512">
@@ -49,7 +49,7 @@
 
                     <div class="lg:w-11/12 md:w-10/12 sm:w-9/12 mx-auto ">
                         <div class="bg-white shadow-lg rounded-lg overflow-hidden">
-                            <div class="flex items-center justify-between px-6 py-4 bg-gray-700">
+                            <div class="flex items-center justify-between px-6 py-2 text-sm bg-gray-700">
                                 <button id="prevMonth" class="text-white">
                                     <svg xmlns="http://www.w3.org/2000/svg"  height="16" width="14" class="fill-blanco" viewBox="0 0 448 512">
                                         <path d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg>
@@ -60,7 +60,7 @@
                                     <svg xmlns="http://www.w3.org/2000/svg"  height="16" width="14" class="fill-blanco" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></svg>
                                 </button>
                             </div>
-                            <div class="grid grid-cols-7 gap-2 p-4" id="calendar">
+                            <div class="grid grid-cols-7 gap-2 p-4" id="calendar" data-publicaciones='@json($publicaciones)'>
                                 <!-- Calendar Days Go Here -->
                             </div>
                             <div id="myModal"

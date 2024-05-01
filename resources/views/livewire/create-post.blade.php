@@ -33,7 +33,9 @@
                             photoPreview = e.target.result;
                         };
                         reader.readAsDataURL($refs.photo.files[0]);
-                "/>
+                "
+                class="text-sm text-gris border-grisClaro border rounded-md w-full file:mr-4 file:py-2 file:px-4 file:border file:rounded-md  file:text-xs file:font-medium file:bg-azul-plomo file:text-white hover:file:bg-white hover:file:border-azul-plomo hover:file:text-azul-plomo transition-all duration-400 ease-in-out "
+                />
                 {{-- <div class="flex w-full px-2 justify-end  ">
                     <input type="file"> --}}
                     {{-- <x-blue-button>
@@ -64,7 +66,7 @@
             </div>
             <div class="bg-blanco w-full overflow-hidden shadow-xl sm:rounded-lg py-2 px-4 ">
 
-                <h4 class="justify-start px-4 py-2 text-xs">Opciones de programación:</h4>
+                {{-- <h4 class="justify-start px-4 py-2 text-xs font-medium">Opciones de programación:</h4> --}}
                 <x-label for="date_public_facebook" value="{{ __('Facebook') }}" />
                 <x-input type="date"  wire:model.live="postCreate.date_public_facebook"></x-input>
                 <x-input-error for="postCreate.date_public_facebook"/>
@@ -114,8 +116,8 @@
     <p class="text-md text-left p-4">{{$postCreate->descripcion}}</p>
     @endif
               @if($postCreate->image)
-            <div class="relative w-72 p-4 rounded-lg">
-                <img src="{{$postCreate->image->temporaryUrl()}}" alt="">
+            <div class="relative w-72 p-4 rounded-lg ">
+                <img src="{{$postCreate->image->temporaryUrl()}}" alt="" class="object-contain">
                 <div class="absolute top-0 left-0 bg-white p-2 z-10">
                  
                     

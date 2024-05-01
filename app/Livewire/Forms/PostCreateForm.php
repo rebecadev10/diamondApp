@@ -50,7 +50,9 @@ class PostCreateForm extends Form
            $this->imageKey=rand();
 
             // Redirigir a otra página después de guardar
-        return redirect()->to('/planificacion/index');
+      //   return redirect()->to('planificacion/');
+      return redirect()->route('planificacion');
+
 
        }
          public function rules()// definimos la validacion de cada propiedad del formulario
