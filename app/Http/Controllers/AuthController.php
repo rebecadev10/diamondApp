@@ -17,7 +17,7 @@ class AuthController extends Controller
     public function callback()
     {
         //  no eliminar stateless para evitar el cierre de sesion ignora el error 
-        $user = Socialite::driver('facebook')->stateless()->user();
+        $facebookUser = Socialite::driver('facebook')->stateless()->user();
         
         //imprimir informaion que trae facebook del usuario
         // dd($user->token);
@@ -25,19 +25,24 @@ class AuthController extends Controller
         // $token = $user->token; // Acceder correctamente al token del usuario
 
 
+        // Verificar si el usuario ya está registrado
+        $user = User::where('facebook_id', $facebookUser->getId())->orWhere('email', $facebookUser->getEmail())->first();
+//si no existe, registramos el usuario y creamos el equipo
+if(!$user){
 
-
-        $user  = User::firstOrCreate([
-           'facebook_id'=>$user->getId(),
-        ],[
-            'name' => $user->getName(),
-            'email' => $user->getEmail(),
-            // 'token' => $token,  //sin permisologia para acceder al token del usuario
-            
-        ]);
-        $this->createUserTeam($user);
-        $this->createUserFacebook($user);
+  $user  = User::firstOrCreate([
+    'facebook_id'=>$user->getId(),
+ ],[
+     'name' => $user->getName(),
+     'email' => $user->getEmail(),
+     // 'token' => $token,  //sin permisologia para acceder al token del usuario
      
+ ]);
+ $this->createUserTeam($user);
+ $this->createUserFacebook($user);
+
+}
+
         
         // dd($user);
         auth()->login($user);

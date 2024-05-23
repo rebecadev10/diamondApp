@@ -169,6 +169,7 @@ document.getElementById('nextMonth').addEventListener('click', () => {
 
 // Function to show the modal with the selected date
 function showModal(selectedDate) {
+    console.log('fecha seleccionada: '+selectedDate);
     const modal = document.getElementById('myModal');
     const modalDateElement = document.getElementById('modalDate');
     modalDateElement.innerText = selectedDate;
