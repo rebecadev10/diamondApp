@@ -1,4 +1,5 @@
 <x-app-layout>
+    @vite(['resources/js/fullCalendar.js'])
     <div class="flex">
         <div class="w-1/5 bg-ceramic">
             <div
@@ -33,11 +34,14 @@
         <div class="w-4/5">
             <div class="bg-blanco w-full overflow-hidden shadow-xl sm:rounded-lg py-2 ">
                 <div class="flex  justify-between px-4 mt-2">
-                    <button class="w-48 bg-amarillo text-blanco hover:text-amarillo hover:bg-blanco rounded-md hover:border-2 hover:border-amarillo px-3 py-2 text-sm fill-white font-medium transform skew-x-12 overflow-hidden transition-all duration-400 ease-in-out hover:scale-105 hover:text-white hover:shadow-lg active:scale-90 before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-amarillo before:to-yellow-300 before:transition-all before:duration-500 before:ease-in-out before:z-[-1] hover:before:left-0">
-                        <a href="{{route('planificacion.publicar')}}" class="inline-flex items-center">
+                    <button
+                        class="w-48 bg-amarillo text-blanco hover:text-amarillo hover:bg-blanco rounded-md hover:border-2 hover:border-amarillo px-3 py-2 text-sm fill-white font-medium transform skew-x-12 overflow-hidden transition-all duration-400 ease-in-out hover:scale-105 hover:text-white hover:shadow-lg active:scale-90 before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-amarillo before:to-yellow-300 before:transition-all before:duration-500 before:ease-in-out before:z-[-1] hover:before:left-0">
+                        <a href="{{ route('planificacion.publicar') }}" class="inline-flex items-center">
                             Crear Publicación <span class="ml-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" height="12" width="12" viewBox="0 0 512 512">
-                                    <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM232 344V280H168c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V168c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H280v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z" />
+                                <svg xmlns="http://www.w3.org/2000/svg" height="12" width="12"
+                                    viewBox="0 0 512 512">
+                                    <path
+                                        d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM232 344V280H168c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V168c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H280v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z" />
                                 </svg>
                             </span>
                         </a>
@@ -45,7 +49,7 @@
                 </div>
 
                 <!-- component -->
-                <div class="flex items-start justify-center h-screen py-4">
+                {{-- <div class="flex items-start justify-center h-screen py-4">
 
                     <div class="lg:w-11/12 md:w-10/12 sm:w-9/12 mx-auto ">
                         <div class="bg-white shadow-lg rounded-lg overflow-hidden">
@@ -81,8 +85,16 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
 
+                <div class="flex items-start justify-center h-screen py-4">
+
+                    <div class="lg:w-11/12 md:w-10/12 sm:w-9/12 mx-auto ">
+                        <div class="bg-white shadow-lg rounded-lg overflow-hidden">
+                            <div id="calendar"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
 
         </div>
