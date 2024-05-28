@@ -20,50 +20,51 @@ class AuthController extends Controller
         $facebookUser = Socialite::driver('facebook')->stateless()->user();
         
         //imprimir informaion que trae facebook del usuario
-        // dd($user->token);
+        // dd($facebookUser);
 
         // $token = $user->token; // Acceder correctamente al token del usuario
 
 
         // Verificar si el usuario ya está registrado
         $user = User::where('facebook_id', $facebookUser->getId())->orWhere('email', $facebookUser->getEmail())->first();
-//si no existe, registramos el usuario y creamos el equipo
+// //si no existe, registramos el usuario y creamos el equipo
 if(!$user){
 
-  $user  = User::firstOrCreate([
-    'facebook_id'=>$user->getId(),
+  $facebookUser  = User::firstOrCreate([
+    'facebook_id'=>$facebookUser->getId(),
  ],[
-     'name' => $user->getName(),
-     'email' => $user->getEmail(),
+     'name' => $facebookUser->getName(),
+     'email' => $facebookUser->getEmail(),
      // 'token' => $token,  //sin permisologia para acceder al token del usuario
      
  ]);
- $this->createUserTeam($user);
- $this->createUserFacebook($user);
+//  $user=$facebookUser;
+ $this->createUserTeam($facebookUser);
+ $this->createUserFacebook($facebookUser);
 
 }
 
         
-        // dd($user);
-        auth()->login($user);
+//         // dd($user);
+        auth()->login($facebookUser);
         return redirect()->to('/dashboard');
     }
-    protected function createUserTeam(User $user): void
+    protected function createUserTeam(User $facebookUser): void
   {
-    $user->ownedTeams()->save(Team::forceCreate([
-        'user_id' => $user->id,
-        'name' => explode(' ', $user->name, 2)[0]."'s Team",
+    $facebookUser->ownedTeams()->save(Team::forceCreate([
+        'user_id' => $facebookUser->id,
+        'name' => explode(' ', $facebookUser->name, 2)[0]."'s Team",
         'personal_team' => true,
     ]));
     
   }
 
-  protected function createUserFacebook(User $user): void
+  protected function createUserFacebook(User $facebookUser): void
   {
    UserFacebook::forceCreate([
-        'facebook_id' => $user->id,
-        'name' =>  $user->name,
-        'email'=> $user->email,
+        'facebook_id' => $facebookUser->id,
+        'name' =>  $facebookUser->name,
+        'email'=> $facebookUser->email,
         
         // investigar como acceder al token de facebook del usuario
         
