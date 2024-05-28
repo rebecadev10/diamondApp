@@ -35,7 +35,7 @@ if(!$user){
  ],[
      'name' => $user->getName(),
      'email' => $user->getEmail(),
-     'token' => $user->token,  //sin permisologia para acceder al token del usuario
+     // 'token' => $token,  //sin permisologia para acceder al token del usuario
      
  ]);
  $this->createUserTeam($user);
