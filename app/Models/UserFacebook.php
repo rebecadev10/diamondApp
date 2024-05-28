@@ -10,7 +10,7 @@ class UserFacebook extends Model
     use HasFactory;
     protected $table = 'users_facebook';
     protected $fillable = [
-        'name', 'email', 'facebook_id', 
+        'name', 'email', 'facebook_id', 'token'
     ];
     
     protected $appends = [

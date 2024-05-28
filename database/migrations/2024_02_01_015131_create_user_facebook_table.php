@@ -16,6 +16,7 @@ return new class extends Migration
             $table->foreignId('facebook_id')->nullable();
             $table->string('name');
             $table->string('email')->unique();
+            $table->string('token')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
             $table->timestamps();
             // $table->string('tokenFacebook');

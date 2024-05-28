@@ -33,6 +33,7 @@ Route::middleware([ 'auth:sanctum',    config('jetstream.auth_session'),    'ver
 Route::controller(PlanificacionController::class)->group(function(){
     Route::get('planificacion','index')->name('planificacion');
     Route::get('planificacion/publicar','publicar')->name('planificacion.publicar');
+    Route::get('planificacion/events','getEvents');
      //btn redirige a la vista crear publicacion
 });
 
