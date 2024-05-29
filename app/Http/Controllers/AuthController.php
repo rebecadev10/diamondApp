@@ -46,7 +46,7 @@ if(!$user){
 
         
 //         // dd($user);
-        auth()->login($facebookUser);
+        auth()->login($user);
         return redirect()->to('/dashboard');
     }
     protected function createUserTeam(User $facebookUser): void

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\PhotosPublicPost;
 
 class Planificacion extends Model
 {
@@ -17,4 +18,8 @@ class Planificacion extends Model
         'time_public_facebook',
         'time_public_instagram'
     ];
+    public function photosPublicPost()
+    {
+        return $this->hasMany(PhotosPublicPost::class);
+    }
 }

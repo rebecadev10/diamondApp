@@ -19,7 +19,7 @@ return new class extends Migration
             $table->time('time_public_facebook');
             $table->date('date_public_instagram');
             $table->time('time_public_instagram');
-            $table->string('media_photo_path', 2048)->nullable();
+            
             $table->timestamps();
         });
     }

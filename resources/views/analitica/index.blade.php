@@ -4,9 +4,19 @@
                 <!-- <div class="bg-cerami "> -->
                 <div class="mx-4 my-2">
                     <ul class="list-none  ">
-                        
-                            <li class="flex flex-row justify-around items-center text-azul-plomo fill-azul-plomo px-2 py-2 text-lg"> <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 512 512"><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"/></svg> Facebook 
-                            <button> <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM232 344V280H168c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V168c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H280v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"/></svg></button>
+                       
+                            <li class="flex flex-row justify-around items-center text-azul-plomo fill-azul-plomo px-2 py-2 text-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 512 512"><path d="M512 256C512 114.6 397.4 0 256 0S0 114.6 0 256C0 376 82.7 476.8 194.2 504.5V334.2H141.4V256h52.8V222.3c0-87.1 39.4-127.5 125-127.5c16.2 0 44.2 3.2 55.7 6.4V172c-6-.6-16.5-1-29.6-1c-42 0-58.2 15.9-58.2 57.2V256h83.6l-14.4 78.2H287V510.1C413.8 494.8 512 386.9 512 256h0z"/></svg> Facebook 
+                        @if (Auth::user()->facebook_id)
+                        {{-- <img class="h-8 w-8 rounded-full object-cover" src="{{ Auth::user()->facebook_profile_photo }}" alt="{{ Auth::user()->name }}" /> --}}
+                        <p class="flex text-gray-700"> {{ Auth::user()->name }}</p>
+                    @else
+                        <a href="{{ route('auth.redirect') }}" class="btn btn-primary">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM232 344V280H168c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V168c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H280v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"/></svg>
+                        </a>
+                        @endif
+                         
+                            {{-- <button> </a></button> --}}
                             </li>
                         
                         
