@@ -1,0 +1,19 @@
+{
+  "resources/css/app.css": {
+    "file": "assets/app-CUlPk9HW.css",
+    "src": "resources/css/app.css",
+    "isEntry": true
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-C1-XIpUa.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  },
+  "resources/js/fullCalendar.js": {
+    "file": "assets/fullCalendar-DzOFJrO6.js",
+    "name": "fullCalendar",
+    "src": "resources/js/fullCalendar.js",
+    "isEntry": true
+  }
+}
