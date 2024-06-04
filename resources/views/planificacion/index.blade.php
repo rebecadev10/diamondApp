@@ -1,5 +1,12 @@
 <x-app-layout>
-    @vite(['resources/js/fullCalendar.js'])
+ {{
+            Vite::useHotFile(storage_path('vite.hot')) // Customize the "hot" file...
+              ->useBuildDirectory('bundle') // Customize the build directory...
+                ->useManifestFilename('assets.json') // Customize the manifest filename...
+                ->withEntryPoints(['resources/js/fullCalendar.js'])) // Specify the entry points... 
+                
+            }}
+    {{-- @vite(['resources/js/fullCalendar.js']) --}}
     <div class="flex">
         <div class="w-1/5 bg-ceramic">
             <div

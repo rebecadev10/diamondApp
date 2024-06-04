@@ -13,8 +13,14 @@
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
     <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-
+    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
+    {{
+        Vite::useHotFile(storage_path('vite.hot')) // Customize the "hot" file...
+          ->useBuildDirectory('bundle') // Customize the build directory...
+            ->useManifestFilename('assets.json') // Customize the manifest filename...
+            ->withEntryPoints(['resources/js/app.js','resources/css/app.css'])) // Specify the entry points... 
+            
+        }}
     <!-- Styles -->
     @livewireStyles
 </head>
